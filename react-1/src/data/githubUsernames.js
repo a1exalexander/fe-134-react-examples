@@ -1,0 +1,15 @@
+export const githubUsernames = [
+  "a1exalexander",
+  "AndrewRyback",
+  "antonsergeevich200",
+  "ProninDenys",
+  "catharkriss",
+  "OleksiyTymchenko",
+  "OlenaKin",
+  "OlesiaShcherbenko",
+  "pavelkravets1995",
+  "ez4vad",
+  "viktor-morhun",
+  "vlados2709",
+  "yliubyva",
+];
