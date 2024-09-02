@@ -10,6 +10,7 @@ export const Pictures = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
   return (
     <div>
       <p>Pictures</p>
@@ -21,8 +22,8 @@ export const Pictures = () => {
         onClose={closeModal}
         buttons={
           <>
-            <button className="button is-danger">Save changes</button>
-            <button className="button">Cancel</button>
+            <Button>Save changes</Button>
+            <Button theme="empty" onClick={closeModal}>Cancel</Button>
           </>
         }
       >
