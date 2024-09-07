@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    padding: 24px;
+}
+
+.field {
+    border: 1px solid hotpink;
+    margin-bottom: 24px;
+    padding: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+input {
+    border: 2px solid blue;
+    margin-bottom: 8px;
+}
+
+input.isError {
+    border-color: red;
+}
