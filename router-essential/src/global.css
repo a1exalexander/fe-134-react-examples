@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2 {
+    margin-bottom: 12px;
+}

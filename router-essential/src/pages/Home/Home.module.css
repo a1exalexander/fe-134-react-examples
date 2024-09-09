@@ -1,0 +1,14 @@
+.container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.tabsView {
+    padding: 64px 0;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}

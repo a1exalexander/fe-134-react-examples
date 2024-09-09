@@ -1,0 +1,13 @@
+.page {
+    background-color: lightgoldenrodyellow;
+    height: 100%;
+}
+
+.container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.back {
+    margin-bottom: 32px;
+}

@@ -1,0 +1,11 @@
+.link {
+    display: inline-flex;
+    color: black;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link[class*="active"] {
+    color: hotpink;
+}
