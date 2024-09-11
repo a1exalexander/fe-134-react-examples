@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: lightblue;
+}
+
+html[class*="dark"] {
+    .container {
+        background-color: lightcoral;
+    }
+}
