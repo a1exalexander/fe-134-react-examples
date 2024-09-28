@@ -1,3 +1,5 @@
+import { VanancyStatus } from "../../constants";
+
 export const vacancies = [
     {
         id: '1',
@@ -10,6 +12,7 @@ export const vacancies = [
         stack: ['React', 'JavaScript', 'HTML', 'CSS'],
         createdAt: '2024-08-01',
         updatedAt: '2024-08-01',
+        status: VanancyStatus.OPENED,
     },
     {
         id: '2',
@@ -22,6 +25,7 @@ export const vacancies = [
         stack: ['Node.js', 'Express', 'MongoDB'],
         createdAt: '2024-08-01',
         updatedAt: '2024-08-01',
+        status: VanancyStatus.OPENED,
     },
     {
         id: '3',
@@ -34,5 +38,6 @@ export const vacancies = [
         stack: ['Product Management', 'Agile', 'Scrum'],
         createdAt: '2024-08-01',
         updatedAt: '2024-08-01',
+        status: VanancyStatus.CLOSED,
     },
 ];

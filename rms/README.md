@@ -1,8 +1,12 @@
-# React + Vite
+# RMS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Requirements:
+- As a recruiter, I want to create vacancies
+- As a recruiter, I want to see all created vacancies
+- As a recruiter, I want to see the status of all vacancies
+- As a recruiter, I want to add candidates to vacancies
+- As a recruiter, I want to change the status of job candidates
+- As a recruiter, I want to review the candidate profile
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Login (As a recruiter)
+- Sign Up (As a recruiter)

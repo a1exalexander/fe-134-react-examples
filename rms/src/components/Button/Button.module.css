@@ -1,0 +1,35 @@
+.button {
+    height: 32px;
+    border-radius: 0;
+    background-color: white;
+    border: 1px solid black;
+    padding: 0 24px;
+    cursor: pointer;
+    transition-property: box-shadow, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    outline: none;
+}
+
+.isLoading {
+    pointer-events: none;
+    cursor: progress;
+    position: relative;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.button:focus {
+    border-color: blue;
+}
+
+.isFluid {
+    width: 100%;
+}
+
+.loader {
+    color: black;
+}
