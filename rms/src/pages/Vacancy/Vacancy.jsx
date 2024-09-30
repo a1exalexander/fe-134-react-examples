@@ -1,59 +1,68 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { fetchVacancy, getVacancy } from '../../store/slices/vacancySlice';
+import {
+    cleanVacancy,
+    fetchVacancy,
+    getVacancy,
+    getVacancyLoader,
+} from '../../store/slices/vacancySlice';
 import { Section } from '../../components/Section';
 import { Centered } from '../../components/Centered';
-import { useState } from 'react';
+import { MultipleContainers } from '../../components/Board';
+import { CandidateStatus } from '../../constants';
+import { useCallback } from 'react';
+import { Loader } from '../../components/Loader';
 
-const board = {
-    columns: [
-        {
-            id: 1,
-            title: 'Backlog',
-            cards: [
-                {
-                    id: 1,
-                    title: 'Add card',
-                    description: 'Add capability to add a card in a column',
-                },
-            ],
-        },
-        {
-            id: 2,
-            title: 'Doing',
-            cards: [
-                {
-                    id: 2,
-                    title: 'Drag-n-drop support',
-                    description: 'Move a card between the columns',
-                },
-            ],
-        },
-    ],
-};
+// const getCandidatesByStatus = () =>
 
 export const Vacancy = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const vacancy = useSelector(getVacancy);
-    const [controlledBoard, setBoard] = useState(board);
+    const isLoading = useSelector(getVacancyLoader);
 
-    function handleCardMove(_card, source, destination) {
-        const updatedBoard = moveCard(controlledBoard, source, destination);
-        setBoard(updatedBoard);
-    }
+    const getCandidatesIds = useCallback(
+        statusCode => {
+            return (vacancy?.candidates || [])
+                .filter(({ status }) => status === statusCode)
+                .map(({ id }) => id);
+        },
+        [vacancy]
+    );
+
+    const sortedCandidates = useMemo(() => {
+        return {
+            [CandidateStatus.REJECTED]: getCandidatesIds(
+                CandidateStatus.REJECTED
+            ),
+            [CandidateStatus.PENDING]: getCandidatesIds(
+                CandidateStatus.PENDING
+            ),
+            [CandidateStatus.INTERVIEW]: getCandidatesIds(
+                CandidateStatus.INTERVIEW
+            ),
+            [CandidateStatus.TASK]: getCandidatesIds(CandidateStatus.TASK),
+            [CandidateStatus.FINAL_INTERVIEW]: getCandidatesIds(
+                CandidateStatus.FINAL_INTERVIEW
+            ),
+            [CandidateStatus.OFFER]: getCandidatesIds(CandidateStatus.OFFER),
+        };
+    }, [getCandidatesIds]);
+
+    const onChange = data => {
+        console.log(data);
+    };
 
     useEffect(() => {
         if (id) {
             dispatch(fetchVacancy(id));
         }
+        return () => {
+            dispatch(cleanVacancy());
+        };
     }, [id]);
-
-    const onColumnNew = (newColumn) => {
-        return { id: 'asdasd', ...newColumn };
-    }
 
     return (
         <>
@@ -61,6 +70,13 @@ export const Vacancy = () => {
                 <Centered className="pt-4">
                     <h1 className="text-2">{vacancy?.title}</h1>
                 </Centered>
+            </Section>
+            <Section className="relative">
+                {isLoading && <Loader size={40} overlay />}
+                <MultipleContainers
+                    items={sortedCandidates}
+                    onChange={onChange}
+                />
             </Section>
         </>
     );

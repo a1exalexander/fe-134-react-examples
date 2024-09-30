@@ -17,15 +17,17 @@ export const vacancySlice = createSlice({
         setLoader(state, action) {
             state.isLoading = action.payload;
         },
+        cleanVacancy(state) {
+            state.data = null;
+            state.isLoading = false;
+        },
     },
 });
 
-export const { setVacancy, setLoader } = vacancySlice.actions;
+export const { setVacancy, setLoader, cleanVacancy } = vacancySlice.actions;
 
 export const fetchVacancy = id => async dispatch => {
     dispatch(setLoader(true));
-    console.log(id);
-    
     const vacancy = await apiService.getVacancy(id);
     dispatch(setVacancy(vacancy));
     dispatch(setLoader(false));
@@ -33,8 +35,7 @@ export const fetchVacancy = id => async dispatch => {
 
 export const getVacancy = state => {
     const { data } = state.vacancy;
-    
-    
+
     if (data) {
         return data;
     }
@@ -42,5 +43,9 @@ export const getVacancy = state => {
     const vacancy = state.vacancies.data.find(({ id }) => id === params.id);
     return vacancy || null;
 };
+
+export const getCandidateById = id => state =>
+    getVacancy(state)?.candidates?.find(item => item?.id === id);
+export const getVacancyLoader = state => state.vacancy.isLoading && !state.vacancy.data;
 
 export default vacancySlice.reducer;

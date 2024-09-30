@@ -5,33 +5,24 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@dnd-kit/core':
+    specifier: ^6.1.0
+    version: 6.1.0(react-dom@18.3.1)(react@18.3.1)
+  '@dnd-kit/modifiers':
+    specifier: ^7.0.0
+    version: 7.0.0(@dnd-kit/core@6.1.0)(react@18.3.1)
+  '@dnd-kit/sortable':
+    specifier: ^8.0.0
+    version: 8.0.0(@dnd-kit/core@6.1.0)(react@18.3.1)
+  '@dnd-kit/utilities':
+    specifier: ^3.2.2
+    version: 3.2.2(react@18.3.1)
   '@reduxjs/toolkit':
     specifier: ^2.2.7
     version: 2.2.7(react-redux@9.1.2)(react@18.3.1)
-  '@syncfusion/ej2-base':
-    specifier: ^27.1.50
-    version: 27.1.50
-  '@syncfusion/ej2-buttons':
-    specifier: ^27.1.50
-    version: 27.1.50
-  '@syncfusion/ej2-dropdowns':
-    specifier: ^27.1.50
-    version: 27.1.50
-  '@syncfusion/ej2-inputs':
-    specifier: ^27.1.50
-    version: 27.1.50
-  '@syncfusion/ej2-layouts':
-    specifier: ^27.1.50
-    version: 27.1.50
-  '@syncfusion/ej2-navigations':
-    specifier: ^27.1.50
-    version: 27.1.50
-  '@syncfusion/ej2-popups':
-    specifier: ^27.1.50
-    version: 27.1.50
-  '@syncfusion/ej2-react-kanban':
-    specifier: ^27.1.50
-    version: 27.1.50
+  classnames:
+    specifier: ^2.5.1
+    version: 2.5.1
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
@@ -311,6 +302,61 @@ packages:
       '@types/tough-cookie': 4.0.5
       tough-cookie: 4.1.4
     dev: true
+
+  /@dnd-kit/accessibility@3.1.0(react@18.3.1):
+    resolution: {integrity: sha512-ea7IkhKvlJUv9iSHJOnxinBcoOI3ppGnnL+VDJ75O45Nss6HtZd8IdN8touXPDtASfeI2T2LImb8VOZcL47wjQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
+      tslib: 2.7.0
+    dev: false
+
+  /@dnd-kit/core@6.1.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-J3cQBClB4TVxwGo3KEjssGEXNJqGVWx17aRTZ1ob0FliR5IjYgTxl5YJbKTzA6IzrtelotH19v6y7uoIRUZPSg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@dnd-kit/accessibility': 3.1.0(react@18.3.1)
+      '@dnd-kit/utilities': 3.2.2(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tslib: 2.7.0
+    dev: false
+
+  /@dnd-kit/modifiers@7.0.0(@dnd-kit/core@6.1.0)(react@18.3.1):
+    resolution: {integrity: sha512-BG/ETy3eBjFap7+zIti53f0PCLGDzNXyTmn6fSdrudORf+OH04MxrW4p5+mPu4mgMk9kM41iYONjc3DOUWTcfg==}
+    peerDependencies:
+      '@dnd-kit/core': ^6.1.0
+      react: '>=16.8.0'
+    dependencies:
+      '@dnd-kit/core': 6.1.0(react-dom@18.3.1)(react@18.3.1)
+      '@dnd-kit/utilities': 3.2.2(react@18.3.1)
+      react: 18.3.1
+      tslib: 2.7.0
+    dev: false
+
+  /@dnd-kit/sortable@8.0.0(@dnd-kit/core@6.1.0)(react@18.3.1):
+    resolution: {integrity: sha512-U3jk5ebVXe1Lr7c2wU7SBZjcWdQP+j7peHJfCspnA81enlu88Mgd7CC8Q+pub9ubP7eKVETzJW+IBAhsqbSu/g==}
+    peerDependencies:
+      '@dnd-kit/core': ^6.1.0
+      react: '>=16.8.0'
+    dependencies:
+      '@dnd-kit/core': 6.1.0(react-dom@18.3.1)(react@18.3.1)
+      '@dnd-kit/utilities': 3.2.2(react@18.3.1)
+      react: 18.3.1
+      tslib: 2.7.0
+    dev: false
+
+  /@dnd-kit/utilities@3.2.2(react@18.3.1):
+    resolution: {integrity: sha512-+MKAJEOfaBe5SmV6t34p80MMKhjvUz0vRrvVJbPT0WElzaOJ/1xs+D+KDv+tD/NE5ujfrChEcshd4fLn0wpiqg==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
+      tslib: 2.7.0
+    dev: false
 
   /@esbuild/aix-ppc64@0.21.5:
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
@@ -857,126 +903,6 @@ packages:
     dev: true
     optional: true
 
-  /@syncfusion/ej2-base@27.1.50:
-    resolution: {integrity: sha512-2NOGikrj+XoGRgq4HBSBRe1lEMN2ORRyARaoufF7GzffvTrIKGpScE69z6C/zASPIX5IDcvcZA0MHVD4B3XIrg==}
-    hasBin: true
-    dependencies:
-      '@syncfusion/ej2-icons': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-buttons@27.1.50:
-    resolution: {integrity: sha512-v5q/ELNduED13F0XuoGuAWhjlAOtPvigVwC0VqxjgEglEbofMvwED2qHOcsOZOFRn22KT/NEDBiUx2L5NFO9EQ==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-data@27.1.50:
-    resolution: {integrity: sha512-MuXYHkd93qk97elaeAbA5scjfneD2/96vlLDmAxXTzeg34FZHJQVyBg/9HkZtk/M7YiNawSXXAF3m6D3bVm5xQ==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-dropdowns@27.1.50:
-    resolution: {integrity: sha512-yCwd0qgfa8Le1Pt72KlKH45ham7l9KdRVowIcaY9D4uYAVVWpr0/573IWXKIJAlSdgxAvVBXuQCoYWuHWyIeEA==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-data': 27.1.50
-      '@syncfusion/ej2-inputs': 27.1.50
-      '@syncfusion/ej2-lists': 27.1.50
-      '@syncfusion/ej2-navigations': 27.1.50
-      '@syncfusion/ej2-notifications': 27.1.50
-      '@syncfusion/ej2-popups': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-icons@27.1.50:
-    resolution: {integrity: sha512-LisXluEss0VnFuSh+pNSgHqT/Cg1FKTvkxdKWoSvqAma3dpcuCfrWP4svyMKPAsCi/hxAGdyy3ShKHu0PUP9iA==}
-    dev: false
-
-  /@syncfusion/ej2-inputs@27.1.50:
-    resolution: {integrity: sha512-JO+J5hl62YGWddsHyZBfwQ2K1iCLHlut6rhHvyCgcOIV+0yXi1j6ZwW2ouc0+0aLeXHm7hLpdMhVX8zGMzRb6A==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-buttons': 27.1.50
-      '@syncfusion/ej2-popups': 27.1.50
-      '@syncfusion/ej2-splitbuttons': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-kanban@27.1.50:
-    resolution: {integrity: sha512-z2CJOdUf8wg6nwbuI/szmo2xHz2ScGQEOQCtXQAamVP3clBvzcg3O8NYwf+sjZ5w0KP+ZCM7tB2bnKrrYQ79iQ==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-buttons': 27.1.50
-      '@syncfusion/ej2-data': 27.1.50
-      '@syncfusion/ej2-dropdowns': 27.1.50
-      '@syncfusion/ej2-inputs': 27.1.50
-      '@syncfusion/ej2-layouts': 27.1.50
-      '@syncfusion/ej2-navigations': 27.1.50
-      '@syncfusion/ej2-notifications': 27.1.50
-      '@syncfusion/ej2-popups': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-layouts@27.1.50:
-    resolution: {integrity: sha512-vjrp7AR+bBf+xUR3EbfQ42I/A/R459L6Zv6iegQCcvUhQLFtNovXPpyTeEm5JowSZNFRzVB88jPRhGv+f2yAMg==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-lists@27.1.50:
-    resolution: {integrity: sha512-CbTdJz4pz9k+/sYTeT5xJ6VZDKGzo9KF7oEeOqhXjRNm1qQd5ANonxsuOVAWLojJwhKQcfQxGTVrOjE/D+YBoA==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-buttons': 27.1.50
-      '@syncfusion/ej2-data': 27.1.50
-      '@syncfusion/ej2-popups': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-navigations@27.1.50:
-    resolution: {integrity: sha512-dQM4o+2uCU7d+rCzfjphuDSwt98UVDfdHspe70Ev2S/dPgynIG8093tz5gDOdRC1gQEVRXFY116NClPDF1KtKQ==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-buttons': 27.1.50
-      '@syncfusion/ej2-data': 27.1.50
-      '@syncfusion/ej2-inputs': 27.1.50
-      '@syncfusion/ej2-lists': 27.1.50
-      '@syncfusion/ej2-popups': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-notifications@27.1.50:
-    resolution: {integrity: sha512-rRo8QCjo6KKLlg7MTEYRY5IJL85028yyOKhakhz9GWQGMJ4z8ippd4QHW8e3Q2GL9W3Ux9koo8gGg02OqIiJgA==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-buttons': 27.1.50
-      '@syncfusion/ej2-popups': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-popups@27.1.50:
-    resolution: {integrity: sha512-CbG9/0JgjvJfb5JwmbTXluRkLGZsGFAQ4b86FzQw/467Oom6JHto0K8qkgfR4t7Ekng1WSycHDSQF7t3QIQL3w==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-buttons': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-react-base@27.1.50:
-    resolution: {integrity: sha512-mmU99YM+oHbSYVjH0zo8THxyCYc63WRks9JSMFlfF+Bq1uNxJ5a5Cwovhyl12uffrdZDmIxpH35yXy0T9ueCEQ==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-react-kanban@27.1.50:
-    resolution: {integrity: sha512-gkDsRpd2t4Hfp+PM8R/X4gSNuFAcNJn1So2YRD7+l8BU6Q3cbathnx04MmR9UcCWyGtievilpS2HdFc1skVJgQ==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-kanban': 27.1.50
-      '@syncfusion/ej2-react-base': 27.1.50
-    dev: false
-
-  /@syncfusion/ej2-splitbuttons@27.1.50:
-    resolution: {integrity: sha512-P8wIL88b/PS7tG6VACiJp/fg9321ONpNZnmI+5suKFW/V2U3NzhYh1yFv0gi79s70Aomu+mjMcre07AZu4U+VQ==}
-    dependencies:
-      '@syncfusion/ej2-base': 27.1.50
-      '@syncfusion/ej2-popups': 27.1.50
-    dev: false
-
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
     dependencies:
@@ -1268,6 +1194,10 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
+    dev: false
 
   /cli-width@4.1.0:
     resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
@@ -2798,6 +2728,10 @@ packages:
       universalify: 0.2.0
       url-parse: 1.5.10
     dev: true
+
+  /tslib@2.7.0:
+    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
+    dev: false
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
