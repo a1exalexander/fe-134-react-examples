@@ -5,6 +5,8 @@ import { Routes } from "../../constants/Routes";
 import styles from "./Product.module.css";
 import { useParams } from "react-router-dom";
 
+console.log('Product');
+
 export const Product = () => {
   const { title, price } = useLoaderData();
   const { slug } = useParams();

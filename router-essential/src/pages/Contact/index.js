@@ -1,1 +1,3 @@
-export * from './Contact';
+import Contact from "./Contact";
+
+export default Contact;

@@ -4,6 +4,8 @@ import { Container } from "../../components/Container";
 import styles from './Home.module.css';
 import { Routes } from "../../constants/Routes";
 
+console.log('Home');
+
 export const Home = () => {
   return (
     <Container className={styles.container}>

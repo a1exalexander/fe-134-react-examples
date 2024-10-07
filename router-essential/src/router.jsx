@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Root } from "./Layouts/Root";
 import { Home } from "./pages/Home";
-import { Contact } from "./pages/Contact";
 import { About } from "./pages/About";
 import { Shop } from "./pages/Shop";
 import { Sale } from "./pages/Sale";
@@ -9,6 +8,10 @@ import { Product, loader as productLoader } from "./pages/Product";
 import { Container } from "./components/Container";
 import { Link } from "react-router-dom";
 import { Routes } from "./constants/Routes";
+import { lazy } from "react";
+import { Suspense } from "react";
+
+const Contact = lazy(() => import("./pages/Contact"));
 
 export const router = createBrowserRouter([
   {
@@ -45,7 +48,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/contact",
-    Component: Contact,
+    element: (
+      <Suspense fallback={<span>page loading...</span>}>
+        <Contact />
+      </Suspense>
+    ),
   },
   {
     path: "/:slug",

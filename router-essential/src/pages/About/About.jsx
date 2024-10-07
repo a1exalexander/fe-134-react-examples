@@ -1,6 +1,9 @@
 import { Container } from "../../components/Container";
 import styles from './About.module.css';
 
+console.log('About');
+
+
 export const About = () => {
   return (
     <div className={styles.page}>
