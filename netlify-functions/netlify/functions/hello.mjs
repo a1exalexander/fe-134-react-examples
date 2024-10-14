@@ -1,3 +1,4 @@
 export default async (req, context) => {
-  return new Response("Hello, world!");
+  const key = process.env.API_KEY;
+  return new Response(`Hello, world! ${key}`);
 };
